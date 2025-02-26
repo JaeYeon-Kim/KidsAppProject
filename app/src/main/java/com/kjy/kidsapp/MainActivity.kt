@@ -16,9 +16,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.kjy.kidsapp.presentation.TestScreen
 import com.kjy.kidsapp.ui.theme.KidsAppTheme
 import com.unity3d.player.UnityPlayerActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,11 +29,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             KidsAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    KidsApp(modifier = Modifier.padding(innerPadding))
+                    MyApp(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
     }
+}
+
+@Composable
+fun MyApp(modifier: Modifier = Modifier) {
+    TestScreen()
 }
 
 @Composable

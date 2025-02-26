@@ -13,6 +13,7 @@ class TestActivity() : UnityPlayerActivity() {
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        // 사용자가 백키 눌렀을 경우 뒤로가기
         if(keyCode == KeyEvent.KEYCODE_BACK) {
             println("여기 타뉭?")
             Log.e("유니티", "여기 타냐구!!")
